@@ -1,4 +1,4 @@
-from Domain.rezervare import getId, getClasa, getNume, getPret, getCheckin
+from Domain.rezervare import getId, getNume, getClasa, getPret, getCheckin
 from Logic.CRUD import adaugaRezervare, getById, stergereRezervare, modificareRezervare
 
 
