@@ -3,15 +3,14 @@ from Logic.CRUD import adaugaRezervare, getById, stergereRezervare, modificareRe
 
 
 def testAdaugaRezervare():
-    lista=[]
-    lista=adaugaRezervare("1", "Kiss Bernadett", "economy", 200, "DA", lista)
+    lista = []
+    lista = adaugaRezervare("1", "Kiss Bernadett", "economy", 200, "DA", lista)
 
-    assert getId(getById("1",lista)) == "1"
+    assert getId(getById("1", lista)) == "1"
     assert getNume(lista[0]) == "Kiss Bernadett"
     assert getClasa(lista[0]) == "economy"
     assert getPret(lista[0]) == 200
     assert getCheckin(lista[0]) == "DA"
-
 
 
 def testStergeRezervare():
@@ -19,7 +18,7 @@ def testStergeRezervare():
     lista = adaugaRezervare("1", "Kiss Bernadett", "economy", 200, "DA", lista)
     lista = adaugaRezervare("2", "Ana Maria", "business", 200, "DA", lista)
 
-    lista = stergereRezervare("1",lista)
+    lista = stergereRezervare("1", lista)
 
     assert (len(lista) == 1)
     assert getById("1", lista) is None
@@ -27,7 +26,7 @@ def testStergeRezervare():
 
 
 def testModificaRezervare():
-    lista=[]
+    lista = []
     lista = adaugaRezervare("1", "Kiss Bernadett", "economy", 200, "DA", lista)
     lista = adaugaRezervare("2", "Ana Maria", "business", 200, "DA", lista)
 
@@ -37,6 +36,3 @@ def testModificaRezervare():
     assert getClasa(lista[1]) == "business"
     assert getPret(lista[1]) == 250
     assert getCheckin(lista[1]) == "DA"
-
-
-

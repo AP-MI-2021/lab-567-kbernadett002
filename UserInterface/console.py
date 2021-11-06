@@ -92,6 +92,3 @@ def runMenu(lista):
             break
         else:
             print("Optiune grestita!Reincercati!")
-
-
-

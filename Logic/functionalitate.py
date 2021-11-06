@@ -1,14 +1,14 @@
 from Domain.rezervare import getNume, getClasa, creeazaRezervare, getId, getPret, getCheckin
 
 
-def trecereClasaSuperioara(numeCitit,lista):
-    '''
+def trecereClasaSuperioara(numeCitit, lista):
+    """
     Trece toate rezervarile facute la un nume citit la o clasa superioara
     :param numeCitit: un string
     :param lista:o lista
     :return: o lista de rezervari
-    '''
-    listaNoua=[]
+    """
+    listaNoua = []
     for rezervare in lista:
         if getNume(rezervare) == numeCitit:
             tipClasa = getClasa(rezervare)
@@ -38,12 +38,12 @@ def trecereClasaSuperioara(numeCitit,lista):
 
 
 def ieftinireRezervare(procentCitit, lista):
-    '''
+    """
     Ieftinirea tuturor rezervarilor cu un procent citit la care s a facut checkin-ul
     :param procentCitit: un int
     :param lista: o lista
     :return: o lista de rezervari
-    '''
+    """
     if procentCitit < 0:
         raise ValueError("Procentul nu poate fi mai mica decat 0!")
     listaNoua = []
@@ -60,6 +60,3 @@ def ieftinireRezervare(procentCitit, lista):
         else:
             listaNoua.append(rezervare)
     return listaNoua
-
-
-
