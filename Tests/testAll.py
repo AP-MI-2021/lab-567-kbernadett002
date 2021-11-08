@@ -1,6 +1,7 @@
 from Tests.testCRUD import testAdaugaRezervare, testStergeRezervare, testModificaRezervare
 from Tests.testDomain import testRezervare
 from Tests.testFunctionalitati import testTrecereClasaSuperioara, testSumaDupaNume, testOrdonareDescrescator
+from Tests.testUndoRedo import testUndoRedo
 
 
 def runAllTests():
@@ -11,3 +12,4 @@ def runAllTests():
     testTrecereClasaSuperioara()
     testSumaDupaNume()
     testOrdonareDescrescator()
+    testUndoRedo()
