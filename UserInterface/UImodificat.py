@@ -41,34 +41,34 @@ def afisare_toate(lista):
 
 
 def meniu(lista):
-    ok = True
-    while ok is True:
+    merge = True
+    while merge is True:
         comenzi = input("Intorduceti comanda: ")
         comandaLista = comenzi.split(";")
-        optiune = comandaLista[0]
-        for c in comandaLista[1:]:
+        for c in comandaLista:
             comanda = c.split(",")
-            if optiune == "add":
+            if comanda[0] == "add":
                 try:
-                    lista = adauga_rezervare(comanda[0], comanda[1], comanda[2], float(comanda[3]), comanda[4], lista)
+                    lista = adauga_rezervare(comanda[1], comanda[2], comanda[3],
+                                             float(comanda[4]), comanda[5], lista)
                 except ValueError as ve:
                     print("Eroare: {}".format(ve))
-            elif optiune == "delete":
+            elif comanda[0] == "delete":
                 try:
-                    lista = stergere_rezervare(comanda[0], lista)
+                    lista = stergere_rezervare(comanda[1], lista)
                 except ValueError as ve:
                     print("Eroare: {}".format(ve))
-            elif optiune == "update":
+            elif comanda[0] == "update":
                 try:
-                    e = modificare_rezervare(comanda[0], comanda[1], comanda[2], float(comanda[3]), comanda[4], lista)
-                    lista = e
+                    lista = modificare_rezervare(comanda[1], comanda[2], comanda[3],
+                                                 float(comanda[4]), comanda[5], lista)
                 except ValueError as ve:
                     print("Eroare: {}".format(ve))
-            elif optiune == "showAll":
+            elif comanda[0] == "showAll":
                 afisare_toate(lista)
-            elif optiune == "help":
+            elif comanda[0] == "help":
                 print_comenzi()
-            elif optiune == "stop":
-                ok = False
+            elif comanda[0] == "stop":
+                merge = False
             else:
                 print("Comanda gresita! Incercati din nou!")
